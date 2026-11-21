@@ -3656,7 +3656,7 @@ function alert_(msg){ const n=$('#name'); n.textContent=msg; n.className='empty'
   let l=null;
   try{ const m=/[?&#]lang=(es|en)\b/.exec(location.search+location.hash); if(m) l=m[1]; }catch(_){}
   if(!l){ try{ l=localStorage.getItem('mol2d.lang'); }catch(_){} }
-  if(l!=='es'&&l!=='en') l=/^es/i.test(navigator.language||'es')?'es':'en';
+  if(l!=='es'&&l!=='en') l='es';
   LANG=l; opt.dark=isDark();
   document.querySelectorAll('#langSeg button').forEach(b=>b.onclick=()=>setLang(b.dataset.lang));
   $('#themeBtn').onclick=()=>setTheme(isDark()?'light':'dark');
